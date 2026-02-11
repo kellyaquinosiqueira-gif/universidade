@@ -22,13 +22,13 @@ flowchart LR
 ## Diagrama de Classes
 ```mermaid
 classDiagram
-    class Aluno{
-        - Nome
-        - Email
-        - CPF
-        - Telefone
-        - Endereço
-        - Matrícula
+    class aluno{
+        - nome
+        - Eemail
+        - cpf
+        - telefone
+        - endereço
+        - matrícula
         + cadastrar()
         + editar()
         + transferir()
