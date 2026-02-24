@@ -1,7 +1,15 @@
+
 from modules.aluno import Aluno
 from modules.mysql import MySQL
 
-banco = MySQL()
+banco = MySQL(
+    '172.0.0.1',
+    'root' ,
+    '',
+    'universidade'
+)
+
+# banco = MySQL()
 
 banco.connect()
 
