@@ -9,7 +9,7 @@ class Aluno:
         self.endereco = endereco
         self.matricula = True
 
-    def selcadastrar(self, db:MySQL):
+    def self(self, db:MySQL):
         query = """
             INSERT INTO alunos (
                 nome,
@@ -32,6 +32,23 @@ class Aluno:
         
 
         return db.execute_query(query, values)
+    
+    def listar(db: MySQL):
+        query = """
+        SELECT 
+        id, 
+        nome, 
+        email, 
+        cpf, 
+        telefone, 
+        endereco, 
+        matricula
+        
+        FROM alunos
+        
+        """
+        
+        return db.execute_query(query)
 
     def editar(self):
         pass

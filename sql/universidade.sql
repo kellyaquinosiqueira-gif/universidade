@@ -12,6 +12,7 @@ CREATE TABLE alunos (
     telefone CHAR (12) UNIQUE,
     endereco VARCHAR (250),
     matricula BOOLEAN DEFAULT TRUE
-
-
 );
+
+SELECT id, nome, email, cpf, endereco, matricula
+FROM alunos

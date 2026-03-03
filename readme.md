@@ -9,7 +9,7 @@ Turmas.
 flowchart LR
 
     Usuario([Secretaria])
-    UC1((Cadastrar alunos))
+    UC1(( alunos))
     UC2((Editar alunos))
     UC3((Transferir alunos))
     
@@ -29,7 +29,7 @@ classDiagram
         - telefone
         - endereço
         - matrícula
-        + cadastrar()
+        + ()
         + editar()
         + transferir()
       
