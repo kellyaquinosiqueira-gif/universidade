@@ -21,6 +21,7 @@ class Cadastrar:
 
         self.configurar_janela()
         self.criar_componentes()
+        self.aplicar_estilo()  # <-- apenas adicionamos isso
 
     def configurar_janela(self):
         self.janela.setWindowTitle("Cadastrar Aluno")
@@ -55,6 +56,52 @@ class Cadastrar:
         self.layout.addWidget(botao_cadastro)
 
         botao_cadastro.clicked.connect(self.cadastrar)
+
+    # 🔥 ESTILO PADRONIZADO
+    def aplicar_estilo(self):
+        self.janela.setStyleSheet("""
+            QWidget {
+                background-color: #0B3D2E;
+                color: black;
+                font-family: Arial;
+                font-size: 14px;
+            }
+
+            QLabel {
+                font-weight: bold;
+                margin-top: 8px;
+            }
+
+            QLineEdit {
+                background-color: #1E8449;
+                border: 2px solid #145A32;
+                border-radius: 6px;
+                padding: 6px;
+                color: black;
+            }
+
+            QLineEdit:focus {
+                border: 2px solid #27AE60;
+                background-color: #239B56;
+            }
+
+            QPushButton {
+                background-color: #145A32;
+                border-radius: 8px;
+                padding: 10px;
+                font-weight: bold;
+                margin-top: 15px;
+                color: black;
+            }
+
+            QPushButton:hover {
+                background-color: #27AE60;
+            }
+
+            QPushButton:pressed {
+                background-color: #0E6655;
+            }
+        """)
 
     def validar_campos(self):
         dados = {chave: campo.text().strip() for chave, campo in self.campos.items()}
@@ -112,4 +159,3 @@ class Cadastrar:
     def limpar_campos(self):
         for campo in self.campos.values():
             campo.clear()
- 

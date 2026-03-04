@@ -18,6 +18,7 @@ class Listar:
 
         self.configurar_janela()
         self.criar_componentes()
+        self.aplicar_estilo()  # ← adicionamos apenas isso
         self.carregar_dados()
 
     def configurar_janela(self):
@@ -35,7 +36,7 @@ class Listar:
         self.tabela = QTableWidget()
         self.tabela.setColumnCount(6)
         self.tabela.setHorizontalHeaderLabels(
-            ["ID", "Nome", "Email", "CPF", "Telefone","Matricula"]
+            ["ID", "Nome", "Email", "CPF", "Telefone", "Matricula"]
         )
 
         self.layout.addWidget(self.tabela)
@@ -44,6 +45,55 @@ class Listar:
         self.layout.addWidget(botao_atualizar)
 
         botao_atualizar.clicked.connect(self.carregar_dados)
+
+    # 🔥 ESTILO PADRÃO DO SISTEMA
+    def aplicar_estilo(self):
+        self.janela.setStyleSheet("""
+            QWidget {
+                background-color: #0B3D2E;
+                color: black;
+                font-family: Arial;
+                font-size: 14px;
+            }
+
+            QTableWidget {
+                background-color: #1E8449;
+                border: 2px solid #145A32;
+                border-radius: 6px;
+                gridline-color: black;
+                color: black;
+            }
+
+            QHeaderView::section {
+                background-color: #145A32;
+                padding: 6px;
+                border: 1px solid #0B3D2E;
+                font-weight: bold;
+                color: black;
+            }
+
+            QTableWidget::item:selected {
+                background-color: #27AE60;
+                color: black;
+            }
+
+            QPushButton {
+                background-color: #145A32;
+                border-radius: 8px;
+                padding: 10px;
+                font-weight: bold;
+                margin-top: 10px;
+                color: black;
+            }
+
+            QPushButton:hover {
+                background-color: #27AE60;
+            }
+
+            QPushButton:pressed {
+                background-color: #0E6655;
+            }
+        """)
 
     def carregar_dados(self):
 
